@@ -2,10 +2,15 @@ import pandas as pd
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+import os
+
+# Cargar variables de entorno desde un archivo .env
+load_dotenv()  
 
 # Configura tu cuenta de correo (se recomienda usar variables de entorno)
-EMAIL = "tu_correo@gmail.com"
-PASSWORD = "tu_contraseña"
+EMAIL = os.getenv("MAIL_USERNAME")
+PASSWORD = os.getenv("MAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
